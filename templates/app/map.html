@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yeongdo-map!</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/png" href="{%static 'imgs\favicon.png'%}" />
+
+  <!--fontawesome-->
+  <script src="https://kit.fontawesome.com/e8c3d1c9e6.js" crossorigin="anonymous"></script>
+  <!--google font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,100&display=swap" rel="stylesheet" />
+  <!--css, js-->
+<!--  <link rel="stylesheet" href="style.css">-->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}?after">
+<!--  <script src="{% static 'js/map.js' %}"></script>-->
+  <script src="{% static 'js/map.js' %}"></script>
+</head>
+<body>
+<!--영목-->
+  <!--
+  <div id="lat" style="display:none">
+    {%for pt in photozones%}
+      {{pt.photozone_latitude}},
+    {%endfor%}
+  </div>
+  <div id="lng" style="display:none">
+    {%for pt in photozones%}
+      {{pt.photozone_longitude}},
+    {%endfor%}
+  </div>
+  <div id="title" style="display:none">
+    {%for pt in photozones%}
+      {{pt.photozone_title}},
+    {%endfor%}
+  </div>-->
+<!--영목-->
+  <nav id="map_navbar">
+    <a href='/' class="home__container" onclick="showSlide()">
+      <h2 class="home__nameo">O</h2>
+      <h2 class="home__named">d</h2>
+      <h2 class="home__namee">e</h2>
+      <h2 class="home__nameg">g</h2>
+      <h2 class="home__nameo2">o</h2>
+    </a>
+  </nav>
+  <!--kakaomap-->
+  <section id="map__container">
+    <div id="map"></div>
+    <!--<div class="side__menu">
+      <h2>관광지</h2>
+      <ul class="side__menu__lists">
+        <li class="menu"><a href="">깡깡이예술마을</a></li>
+        <li class="menu"><a href="">영도대교</a></li>
+        <li class="menu"><a href="">절영해안터널</a></li>
+        <li class="menu"><a href="">청학수변공원</a></li>
+        <li class="menu"><a href="">태종대</a></li>
+        <li class="menu"><a href="">피아노계단</a></li>
+        <li class="menu"><a href="">75광장</a></li>
+      </ul>
+    </div>-->
+  </section>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e6784ba62fa294f04cabe1faea1e01fe"></script>
+  <script src="{% static 'js/map.js' %}"></script>
+</body>
+</html>

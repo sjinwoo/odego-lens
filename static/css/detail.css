@@ -1,0 +1,196 @@
+/*Global*/
+:root{
+  /* Color */
+  --color-white: #ffffff;
+  --color-black: #0B2436;
+  --color-light-white: #faf8f8;
+  --color-dark-white: #c3c3c3;
+  --color-dark-gray: #7f7f7f;
+  --color-pink: #C9A3A4;
+  --color-grayblue: #B4BDCB;
+  --color-light-green: #ACB5AC;
+  --color-dark-yellow: #AB8755;
+  --color-blue: #87BDE9;
+  --color-light-blue:#A7CEEF;
+  --color-light-gray:rgb(242, 246, 247);
+
+  /*Font size*/
+  --font-large: 28px;
+  --font-mediumlarge: 28px;
+  --font-medium: 20px;
+  --font-reqular: 14px;
+  
+  /*Font weigth*/
+  --wight-regular-bold: 400;
+  --wight-bold: 500;
+}
+
+/*Univeral tags*/
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: "Roboto", sans-serif;
+  cursor: default;
+  background-color: rgb(242, 246, 247, 0.5);
+}
+a{
+  text-decoration: none;
+}
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+/*Typography*/
+h1{
+  font-size: var(--font-large);
+  font-weight: var(--wight-regular-bold);
+  color: var(--color-black);
+  margin: 8px 0px;
+}
+
+h2{
+  font-size: var(--font-medium);
+  font-weight: var(--wight-bold);
+  color: var(--color-black);
+  margin: 8px 0px;
+}
+
+h3{
+  font-size: var(--font-mediumlarge);
+  font-weight: var(--wight-bold);
+  color: var(--color-black);
+}
+
+p{
+  font-size: var(--font-reqular);
+  font-weight: var(--wight-regular-bold);
+  color: var(--color-black);
+  margin: 8px 0px;
+}
+/*Navbar*/
+#navbar{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+
+.map__btn{
+  width: 50px;
+  height: 50px;
+}
+
+.home__nameo{
+  color: #B4BDCB;
+  display: inline;
+}
+.home__named{
+  color: #C9A3A4;
+  display: inline;
+}
+.home__namee{
+  color:#ACB5AC;
+  display: inline;
+}
+.home__nameg{
+  color: #A7CEEF;
+  display: inline;
+}
+.home__nameo2{
+  color: #AB8755;
+  display: inline;
+}
+
+/*Img*/
+#img{
+  max-width: 1200px;
+}
+
+
+/*Description*/
+#description{
+  max-width: 1200px;
+  margin: auto;
+}
+
+.description__container{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.spot__info{
+  padding-right: 20px;
+  border-bottom: solid 2px var(--color-dark-gray);
+}
+
+.spot__name{
+  padding: 20px 0;
+}
+
+.spot__address{
+  border-top: solid 2px var(--color-dark-gray);
+  padding-top: 30px;
+}
+
+.spot__address, .spot__time, .spot__fee, .spot__info{
+  padding-bottom: 8px;
+}
+
+.spot__description{
+  padding-bottom: 30px;
+}
+
+.pin__icon, .time__icon, .fee__icon, .info__icon{
+  width: auto;
+  height: 20px;
+  fill: var(--color-blue);
+}
+.info__icon{
+  padding-top: 2px;
+}
+.Jeoryeong__img, .CheonghakWatersidePark__img, .Pianostair__img, .Taejongdae__img, .YeongdodaegyoBridg__img{
+  padding: 0 5px;
+  max-width: 400px;
+  height: auto;
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+      --font-large: 22px;
+      --font-mediumlarge: 22px;
+      --font-medium: 16px;
+      --font-regular: 12px;
+    }
+  .map__btn{
+    width: 40px;
+    height: 40px;
+  }
+
+  .description__container{
+    display:flex;
+    flex-direction: column;
+  }
+  #img{
+    display:flex;
+    justify-content: center;
+  }
+  .pin__icon, .time__icon, .fee__icon, .info__icon{
+    width: auto;
+    height: 14px;
+    fill: var(--color-blue);
+  }
+  .spot__info{
+    padding: 12px;
+  }
+  .Jeoryeong__img, .CheonghakWatersidePark__img, .Pianostair__img, .Taejongdae__img, .YeongdodaegyoBridg__img{
+    padding: 0 5px;
+    max-width: 100%;
+  }
+}

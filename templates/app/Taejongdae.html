@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Odego Lens - image search anywhere!</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="{%static 'imgs\favicon.png' %}" />
+    <!--google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,100&display=swap" rel="stylesheet" />
+    <!--css, js-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}?after"/>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  </head>
+<body>
+  <!--Navbar-->
+  <nav id="navbar">
+    <a href='/' class="detail__navbar">
+      <h3 class="home__nameo">O</h3>
+      <h3 class="home__named">d</h3>
+      <h3 class="home__namee">e</h3>
+      <h3 class="home__nameg">g</h3>
+      <h3 class="home__nameo2">o</h3>
+    </a>
+    <a href='/map/'>
+      <img class="map__btn" src="{% static 'imgs\map.png'%}?after" alt="" >
+    </a>
+  </nav>
+  <!--Description-->
+  <section id="description">
+    <div class="spot__result">
+      <div class="spot__name">
+        <h1 style="display:inline">"태종대"</h1>
+        <h2 style="display:inline"> 를 검색하셨습니다.</h2>
+      </div>
+    </div>
+    <div class="description__container">
+      <div class="spot__info">
+        <div class="spot__address">
+          <h2><svg class="pin__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M320 144c0 79.5-64.5 144-144 144S32 223.5 32 144S96.5 0 176 0s144 64.5 144 144zM176 80c8.8 0 16-7.2 16-16s-7.2-16-16-16c-53 0-96 43-96 96c0 8.8 7.2 16 16 16s16-7.2 16-16c0-35.3 28.7-64 64-64zM144 480V317.1c10.4 1.9 21.1 2.9 32 2.9s21.6-1 32-2.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32z"/></svg> 주소</h2>
+          <p> 부산광역시 영도구 전망로 209 (동삼동)</p>
+        </div>
+        <div class="spot__time">
+          <h2><svg class="time__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 512C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256s-114.6 256-256 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"/></svg> 이용시간</h2>
+          <p>연중무휴</p>
+        </div>
+        <div class="spot__fee">
+          <h2><svg class="fee__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M64 32C28.7 32 0 60.7 0 96v32H576V96c0-35.3-28.7-64-64-64H64zM576 224H0V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V224zM112 352h64c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm112 16c0-8.8 7.2-16 16-16H368c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16z"/></svg> 입장료</h2>
+          <p>무료(다누비 열차 이용요금 : 어른 3,000원, 청소년 2,000원, 어린이 1,500원)</p>
+        </div>
+        <div class="spot__description">
+          <h2><svg class="info__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-144c-17.7 0-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32s-14.3 32-32 32z"/></svg> 설명</h2>
+          <p>태종대는 신라 29대 임금이자 삼국통일의 초석을 다진 태종무열왕(김춘추)이 전국을 순회하던 도중 울창한 소나무 숲과 삼면이 바다로 둘러싸인 기암절벽 등 이곳의 빼어난 해안 절경에 심취해 활을 쏘며 즐긴 것에서 유래한 명칭입니다.
+            영도해안을 따라 약 9.1㎞의 최남단에 위치하고 있는 태종대는 1,713,763㎡ 면적에 해발 250m의 최고봉을 중심으로 해송을 비롯한 120여종의 수목이 울창하게 우거져 있으며, 해안에는 깎아 세운 듯한 절벽과 기암괴석 그리고 탁 트인 대한해협을 한눈에 볼 수 있는 명소로 옛부터 많은 국내외 관광객들의 발길이 끊이지 않고 있습니다. 청명한 날에는 약 56㎞거리인 일본의 쓰시마섬까지 볼 수 있어 부산을 대표하는 관광명소로 옛부터 시민과 방문객들이 즐겨 찾았던 곳입니다. 또한 새해 일출을 보기위해 많은 사람들이 방문하는 만큼 새해의 일출을 보기에도 정말 적합한 장소입니다.</p>
+        </div>
+      </div>
+      <div id="img">
+        <div class="img__container">
+          <img class="Taejongdae__img" src="{%static 'imgs\태종대.jpg'%}" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section>
+</body>
+</html>

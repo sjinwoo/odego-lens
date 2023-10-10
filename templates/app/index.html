@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Odego Lens - image search anywhere!</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="{%static 'imgs\favicon.png' %}" />
+    <script src="https://kit.fontawesome.com/e8c3d1c9e6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,100&display=swap" rel="stylesheet" />
+<!--    <link rel="stylesheet" href="styles.css">-->
+<!--    <link rel="stylesheet" href="/templates/styles.css">-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}?after"/>
+<!--    <script src="slide.js"></script>-->
+<!--    <script src="/templates/slide.js"></script>-->
+    <script src="{% static 'js/slide.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<!--    <script src="tooltip.js"></script>-->
+<!--    <script src="/templates/tooltip.js"></script>-->
+    <script src="{% static 'js/tooltip.js' %}"></script>
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav id="navbar">
+      <div class="navbar__container">
+        <div class="click__here1"> <h5 class="click__here__map"><b>영도지도</b></h5> </div>
+        <a href='/map/'>
+          <img class="map__btn" src="{% static 'imgs\map.png'%}" alt="" >
+        </a>
+      </div>
+    </nav>
+    <!-- Home -->
+    <section id="home">
+      <a href='/' class="home__container" onclick="showSlide()">
+        <h1 class="home__nameo">O</h1>
+        <h1 class="home__named">d</h1>
+        <h1 class="home__namee">e</h1>
+        <h1 class="home__nameg">g</h1>
+        <h1 class="home__nameo2">o</h1>
+      </a>
+    </section>
+    <!-- Search widget-->
+    <section id="search">
+      <form method="post" enctype="multipart/form-data" style="margin-top: 50px; margin-bottom: 30px;" class="search__form">
+        {% csrf_token %}
+        <label for="Id_image"></label>
+        <input type="file" name="image" accept="image/*" required id="id_image">
+        <button type="submit" id="btnUpload" class="upload__btn">Upload</button>
+    </form>
+    
+    {% if image_uri is not None %}
+        {% if "(으)로 검색한 결과입니다." not in predicted_label %}
+            <div class="alert alert-primary" role="alert">
+              <div>
+                <h3>검색 결과: <b class="predicted__label">{{ predicted_label }}</b></h3>
+              </div>
+            </div>
+        {% elif "(으)로 검색한 결과입니다." in predicted_label %}
+            <div class="alert alert-primary" role="alert">
+              <div>
+                <h3>제안: <b class="predicted__label">{{ predicted_label }}</b></h3>
+              </div>
+            </div>
+        {% else %}
+          <div class="alert alert-danger" role="alert">
+            Prediction error. No label predicted.
+          </div>
+        {% endif %}
+          <img src="{{ image_uri }}" class="img-fluid" alt="Uploaded image">
+          {% if predicted_label == "영도대교" %}
+            <div id="more">
+              <a href="/YeongdodaegyoBridge/" class="more_info"> 더 많은 정보 ! </a>
+              <h5 class="click__here"> <b>Click</b> </h5>
+            </div>
+          {% elif predicted_label == "태종대" %}
+              <div id="more">
+                <a href="/Taejongdae/" class="more_info"> 더 많은 정보 ! </a>
+                <h5 class="click__here"> <b>Click</b> </h5>
+              </div>
+          {% elif predicted_label == "청학수변공원" %}
+              <div id="more">
+                <a href="/CheonghakWatersidePark/" class="more_info"> 더 많은 정보 ! </a>
+                <h5 class="click__here"> <b>Click</b> </h5>
+              </div>
+          {% elif predicted_label == "절영해안터널" %}
+              <div id="more">
+                <a href="/Jeoryeong/" class="more_info"> 더 많은 정보 ! </a>
+                <h5 class="click__here"> <b>Click</b> </h5>
+              </div>
+          {% elif predicted_label == "피아노계단" %}
+              <div class="more">
+                <a href="/Pianostair/" class="more_info"> 더 많은 정보 ! </a>
+                <h5 class="click__here"> <b>Click</b> </h5>
+              </div>
+          {% elif "(으)로 검색한 결과입니다." in predicted_label %}
+              <p>hi</p>
+          {% endif %}
+            <p style="padding-bottom:1000px"></p>
+    {% endif %}
+      <p></p>
+    </section>
+    <!--Imgs slider-->
+    <section id="slideShow">
+      <div class="slide__container">
+        <ul class="slides">
+          <li class="slide1"><img class="slidesize" src="{%static 'imgs\1.png'%}" alt="" ></li>
+          <li class="slide1"><img class="slidesize" src="{%static 'imgs\2.png'%}" alt=""></li>
+          <li class="slide1"><img class="slidesize" src="{%static 'imgs\3.jpg'%}" alt="" ></li>
+          <li class="slide1"><img class="slidesize" src="{%static 'imgs\4.jpg'%}" alt="" ></li>
+          <li class="slide1"><img class="slidesize" src="{%static 'imgs\5.jpeg'%}" alt="" ></li>
+          <li class="slide1"><img class="slidesize" src="{%static 'imgs\6.jpeg'%}" alt="" ></li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>
